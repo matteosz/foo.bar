@@ -9,15 +9,15 @@ Write a function called answer(data, n) that takes in a list of less than 100 in
 
 Test Case 1
 ```ruby
-#Inputs:
+Inputs:
 data = [1, 2, 3]
 n = 0
-#Output:
+Output:
 []
 ```
 Test Case 2
 ```ruby
-#Inputs:
+Inputs:
 data = [1, 2, 2, 3, 3, 3, 4, 5, 5]
 n = 1
 Output:
@@ -25,10 +25,10 @@ Output:
 ```
 Test Case 3
 ```ruby
-#Inputs:
+Inputs:
 data = [1, 2, 3]
 n = 6
-#Output:
+Output:
 [1, 2, 3]
 ```
 
