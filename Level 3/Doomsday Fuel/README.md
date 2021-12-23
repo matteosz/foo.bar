@@ -34,4 +34,8 @@ s5 has probability 9/14
 So, putting that together, and making a common denominator, gives an answer in the form of [s2.numerator, s3.numerator, s4.numerator, s5.numerator, denominator] which is [0, 3, 2, 9, 14].
 
 ## Solution
+
+### Theory
+To understand the adopted approach, a knowledge in stochastic processes, in particular Markov Chain method (see [reference](https://brilliant.org/wiki/markov-chains/)), is required.
+
 Two solutions are provided: the [first](main_np.py) one using numpy to execute matrix operations and the [second](main_no_np.py) implementing such operations from scratch.
