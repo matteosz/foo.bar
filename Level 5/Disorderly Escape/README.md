@@ -79,48 +79,38 @@ As we want to compute the number of equivalency classes, we need to find the ord
 
 To find Y, we use as announced Polya enumeration theorem.
 We define as cycle index (see [reference](https://en.wikipedia.org/wiki/Cycle_index)):
-Z_G(t_1_, t_2,...,t_n) = \frac{1}{|G|} sum_{g \in G} t_{1}^{c_1(g)}...t_{n}^{c_n(g)}
 
-![equation](https://latex.codecogs.com/svg.image?%5Cbg_black%20Z_G(t_1_,%20t_2,...,t_n)%20=%20%5Cfrac%7B1%7D%7B%7CG%7C%7D%20sum_%7Bg%20%5Cin%20G%7D%20t_%7B1%7D%5E%7Bc_1(g)%7D...t_%7Bn%7D%5E%7Bc_n(g)%7)
+![equation](https://latex.codecogs.com/svg.image?Z_G(t_1_,&space;t_2,...,t_n)&space;=&space;\frac{1}{|G|}&space;\sum_{g&space;\in&space;G}&space;t_{1}^{c_1(g)}\cdot\cdot\cdot&space;t_{n}^{c_n(g)})
 
 where n=|P| anc c_k(g) is the number of k-cycles (cycles of length k) of the group element g as a permutation of P.
 However, in our configuration, all the s states have the same weight (0), so that we can write a simplified version:
-Y = |S^P /G| = Z(G,s,s,...,s) = \frac{1}{|G|} \sum_{g \in G} s^{c_k(g)}
 
 ![equation](https://latex.codecogs.com/svg.image?\bg_black&space;Y&space;=&space;|S^P&space;/G|&space;=&space;Z(G,s,s,...,s)&space;=&space;\frac{1}{|G|}&space;\sum_{g&space;\in&space;G}&space;s^{c_k(g)})
 
 Therefore, we need to compute the cycle index of the group G and so of the symmetric groups S_W and S_H.
 It's proved that (see [reference](https://franklinvp.github.io/assets/files/WeiXuCycleIndexCartesianProduct.pdf)):
-Z(A \times B, s_1,s_2,...,s_{n_1}s_{n_2}) = Z(A, s_1,...,s_{n_1}) \otimes Z(B, s_1,...,s_{n_2})
 
 ![equation](https://latex.codecogs.com/svg.image?\bg_black&space;Z(A&space;\times&space;B,&space;s_1,s_2,...,s_{n_1}s_{n_2})&space;=&space;Z(A,&space;s_1,...,s_{n_1})&space;\otimes&space;Z(B,&space;s_1,...,s_{n_2}))
 
 For this reason, with a short notation we say that 
-Z(G) = Z(S_W) \otimes Z(S_H)
 
 ![equation](https://latex.codecogs.com/svg.image?\bg_black&space;Z(G)&space;=&space;Z(S_W)&space;\otimes&space;Z(S_H))
 
 and, in particular, considering the type of function f as 
-f(x_1,...,x_n) = \sum a_{i_1i_2...i_m}x_{1}^{i_1}...x_{n}^{i_n}
 
 ![equation](https://latex.codecogs.com/svg.image?\bg_black&space;f(x_1,...,x_n)&space;=&space;\sum&space;a_{i_1i_2...i_m}x_{1}^{i_1}...x_{n}^{i_n})
 
-f(x_1,...,x_m) \otimes f(x_1,...,x_n) = \sum a_{i_1i_2...i_m}b_{j_1j_2...j_n}\times \prod{1 \leq r \leq m\\\ \leq s \leq n} (x_{r}^{i_r}\otimesx_{s}^{j_s})
+![equation](https://latex.codecogs.com/svg.image?f(x_1,...,x_m)\otimes&space;f(x_1,...,x_n)=\sum&space;a_{i_1i_2...i_m}b_{j_1j_2...j_n}\times\prod_{1\leq&space;r\leq&space;m,1\leq&space;s\leq&space;n}&space;(x_{r}^{i_r}\otimes&space;x_{s}^{j_s}))
 
-![equation](https://latex.codecogs.com/svg.image?\bg_black&space;f(x_1,...,x_m)&space;\otimes&space;f(x_1,...,x_n)&space;=&space;\sum&space;a_{i_1i_2...i_m}b_{j_1j_2...j_n}\times&space;\prod{1&space;\leq&space;r&space;\leq&space;m\\\&space;\leq&space;s&space;\leq&space;n}&space;(x_{r}^{i_r}\otimesx_{s}^{j_s}))
+,where
 
-where (x_{r}^{i_r}\otimesx_{s}^{j_s}) = x_{lcm(r,s)}^{gcd(r,s)i_rj_s}
+![equation](https://latex.codecogs.com/svg.image?(x_{r}^{i_r}\otimes&space;x_{s}^{j_s})&space;=&space;x_{lcm(r,s)}^{gcd(r,s)i_rj_s})
 
-![equation](https://latex.codecogs.com/svg.image?\bg_black&space;(x_{r}^{i_r}\otimesx_{s}^{j_s})&space;=&space;x_{lcm(r,s)}^{gcd(r,s)i_rj_s})
-
-so, we define:
-Z(S_n, s_1,s_2,...,s_n) = \sum_{r_1+2r_2+...+nr_n=n} \frac{s_{1}^{r_1}s_{2}^{r_2}s_{n}^{r_n}}{1^{r_1}r_1!2^{r_2}r_2!...n^{r_n}r_n!}
+So, we define:
 
 ![equation](https://latex.codecogs.com/svg.image?\bg_black&space;Z(S_n,&space;s_1,s_2,...,s_n)&space;=&space;\sum_{r_1&plus;2r_2&plus;...&plus;nr_n=n}&space;\frac{s_{1}^{r_1}s_{2}^{r_2}s_{n}^{r_n}}{1^{r_1}r_1!2^{r_2}r_2!...n^{r_n}r_n!})
 
 ### Conclusion
 Combining the results above, we obtain:
 
-Y = \frac{1}{w!h!} \sum_{i \in PowSet(W)\\j \in PowSet(H)} \frac{w!}{1^{i_1}i_1!2^{i_2}i_2!...w^{i_w}i_w!}\frac{h!}{1^{j_1}j_1!2^{j_2}j_2!...h^{j_h}j_h!}s^{\sum_{a \in i\\b \in j}gcd(a,b)}
-
-![equation](https://latex.codecogs.com/svg.image?\bg_black&space;Y&space;=&space;\frac{1}{w!h!}&space;\sum_{i&space;\in&space;PowSet(W)\\j&space;\in&space;PowSet(H)}&space;\frac{w!}{1^{i_1}i_1!2^{i_2}i_2!...w^{i_w}i_w!}\frac{h!}{1^{j_1}j_1!2^{j_2}j_2!...h^{j_h}j_h!}s^{\sum_{a&space;\in&space;i\\b&space;\in&space;j}gcd(a,b)})
+![equation](https://latex.codecogs.com/svg.image?Y=\frac{1}{w!h!}&space;\sum_{i\in&space;PW(W),j\in&space;PW(H)}&space;\frac{w!}{1^{i_1}i_1!2^{i_2}i_2!...w^{i_w}i_w!}\frac{h!}{1^{j_1}j_1!2^{j_2}j_2!...h^{j_h}j_h!}s^{\sum_{a\in&space;i,b\in&space;j}gcd(a,b)})
